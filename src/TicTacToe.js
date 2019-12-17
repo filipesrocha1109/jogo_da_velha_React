@@ -6,9 +6,11 @@ function TicTacToe() {
 
   const empityBoard = Array(9).fill("");
   const[board,setBoard]=useState(empityBoard);
+  const[currentPlayer,setcurrentPlayer]=useState("O");
 
   const handlecellclick = (index)=>{
-    setBoard(board.map((item, itemIndex)=> itemIndex === index ? "X" : item));
+    setBoard(board.map((item, itemIndex)=> itemIndex === index ? currentPlayer : item));
+    setcurrentPlayer(currentPlayer === "X" ? "O" :"X");
   }
 
   return (
